@@ -1,0 +1,2 @@
+python-telegram-bot[jobqueue,webhooks]==21.7
+watchdog

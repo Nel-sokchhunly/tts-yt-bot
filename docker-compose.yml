@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+      - "4040:4040"
+    volumes:
+      - ./data:/app/data
+      - ./bot:/app/bot
