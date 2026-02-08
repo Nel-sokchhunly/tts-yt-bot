@@ -3,7 +3,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from bot.auth_store import remove as auth_remove
+from bot.stores.auth_store import remove as auth_remove
 
 
 async def logout_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

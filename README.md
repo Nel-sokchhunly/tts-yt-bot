@@ -89,8 +89,9 @@ A generic Telegram bot starter: auth, webhook, optional ngrok for local dev, Doc
 
 ```
 bot/
-  commands/       # Command handlers (auth, logout, start, gate)
-  auth_store.py   # Persisted list of authenticated user IDs
+  commands/       # Command handlers (auth, logout, start, gate, yt)
+  pipelines/     # TTS from SRT, replace video audio
+  stores/        # auth_store, processing_store
   __main__.py     # App entry, webhook config
 .env.example      # Env template
 docker-compose.yml

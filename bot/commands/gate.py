@@ -3,7 +3,7 @@
 from telegram import Update
 from telegram.ext import ContextTypes, MessageHandler, filters
 
-from bot.auth_store import is_authenticated
+from bot.stores.auth_store import is_authenticated
 from bot.commands.config import ALLOWED_WITHOUT_AUTH
 
 
@@ -21,5 +21,11 @@ class UnauthorizedFilter(filters.UpdateFilter):
         return _is_unauthorized(update)
 
 
+UNAUTHORIZED_MESSAGE = (
+    "404 Unauthorized.\n\n"
+    "Use /auth <password> to authenticate."
+)
+
+
 async def unauthorized(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("404 Unauthorized")
+    await update.message.reply_text(UNAUTHORIZED_MESSAGE)
